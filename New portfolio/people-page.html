@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+<body class="body people-page">
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-row">
+                <a href="./index.html" class="logo"><strong>PHOTO</strong>grapher </a>
+                <ul class="nav-list">
+                    <li class="nav-list__item"><a href="./index.html " class="nav-list__link nav-list__link--active">Photos</a></li>
+                    <li class="nav-list__item"><a href="./contacts.html" class="nav-list__link">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section -->
+    <main class="section">
+        <div class="container">
+            <h2 class="title-1">Photos</h2>
+            <ul class="photos">
+                <li class="photo" onclick="openModal(this)">
+                    <img src="./img/people/01.jpeg" alt="Places" class="photo__img">
+                </li>
+                <li class="photo" onclick="openModal(this)">
+                    <img src="./img/people/02.jpeg" alt="Places" class="photo__img">
+                </li>
+                <li class="photo" onclick="openModal(this)">
+                    <img src="./img/people/03.jpeg" alt="Places" class="photo__img">
+                </li>
+                <li class="photo" onclick="openModal(this)">
+                    <img src="./img/people/04.jpeg" alt="Places" class="photo__img">
+                </li>
+                <li class="photo" onclick="openModal(this)">
+                    <img src="./img/people/05.jpeg" alt="Places" class="photo__img">
+                </li>
+                <li class="photo" onclick="openModal(this)">
+                    <img src="./img/people/06.jpeg" alt="Places" class="photo__img">
+                </li>
+                <li class="photo" onclick="openModal(this)">
+                    <img src="./img/people/07.jpeg" alt="Places" class="photo__img">
+                </li>
+                <li class="photo" onclick="openModal(this)">
+                    <img src="./img/people/08.jpeg" alt="Places" class="photo__img">
+                </li>
+                
+            </ul>
+        </div>
+    </main>
+
+    <!-- Modal structure -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+           function openModal(element) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("modalImg");
+    var captionText = document.getElementById("caption");
+
+    modal.style.display = "block";
+    modalImg.src = element.querySelector('img').src;
+    captionText.innerHTML = element.querySelector('h3') ? element.querySelector('h3').innerText : '';
+}
+
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+var photos = document.querySelectorAll('.photo');
+photos.forEach(function(photo) {
+    photo.addEventListener('click', function() {
+        openModal(this);
+    });
+
+    photo.addEventListener('touchstart', function() {
+        openModal(this);
+    });
+});
+    </script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <ul class="social">
+                    <li>
+                        <a href="https://www.instagram.com/_saxnelka?igsh=MXBlaGhmcWwwbG92Zw=="><img class="social__item" src="./img/icons/instagram.svg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/IlliaSakhno"><img class="social__item" src="./img/icons/telegram.svg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/+380687284818"><img class="social__item" src="./img/icons/whatsapp.svg" alt=""></a>
+                    </li>
+                </ul>
+                <div class="copyright">
+                    <p>© 2024 rini.com.ua</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
