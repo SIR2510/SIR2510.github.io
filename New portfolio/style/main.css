@@ -120,7 +120,7 @@
         align-items: center;
 
         background-color: var(--dark-bg);
-        background-image: url('./../img/header-bg.png');
+        background-image: url('./../img/icons/header-bg.png');
         background-repeat: no-repeat;
         background-size: auto;
         background-position: center center;
